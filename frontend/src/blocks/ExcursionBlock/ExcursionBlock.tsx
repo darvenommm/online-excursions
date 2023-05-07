@@ -32,7 +32,7 @@ export const ExcursionBlock = (): JSX.Element => {
             <Image
               maxH="150px"
               maxW="300px"
-              src={`http://localhost:4000/${excursion.imageUrl}`}
+              src={`${config.serverUrl}/${excursion.imageUrl}`}
             />
             <VStack align="start">
               <Text>Title: {excursion.title}</Text>
