@@ -129,7 +129,7 @@ export const Excursions = (): JSX.Element => {
       {excursions.length === 0 ? (
         <Center>
           <Text fontSize="40px">
-            {isLoading ? 'Loading...' : 'There are not excursions by search'}
+            {isLoading ? 'Loading...' : 'There are not excursions'}
           </Text>
         </Center>
       ) : (
