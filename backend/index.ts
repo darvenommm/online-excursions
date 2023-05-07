@@ -19,6 +19,7 @@ const PORT = process.env.PORT ?? 4_000;
 const app = express();
 
 app.use(cors(), json());
+app.use(express.static('../dist'));
 app.use('/pictures', express.static('pictures'));
 
 app.get('/excursions', async (_req, res): Promise<void> => {

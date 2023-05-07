@@ -11,7 +11,8 @@
     "install:all": "npm run install && npm run install:frontend && npm run install:backend",
     "dev:backend": "cd backend && npm run dev",
     "dev:frontend": "cd frontend && npm run dev",
-    "prod:frontend": "cd frontend && npm run build . --outDir ../build",
+    "prod:frontend": "cd frontend && npm run build .",
+    "prod:backend": "cd backend && npm run start",
     "dev": "concurrently -k \"npm run dev:backend\" \"sleep 5 && npm run dev:frontend\""
   },
   "devDependencies": {
