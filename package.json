@@ -1,0 +1,19 @@
+{
+  "name": "online-excursions",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Denis Romodanov",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "install:frontend": "cd frontend && yarn install",
+    "install:backend": "cd backend && yarn install",
+    "install:all": "yarn install && yarn run install:frontend && yarn run install:backend",
+    "dev:backend": "cd backend && yarn run dev",
+    "dev:frontend": "cd frontend && yarn run dev",
+    "dev": "concurrently -k \"yarn run dev:backend\" \"sleep 5 && yarn run dev:frontend\""
+  },
+  "devDependencies": {
+    "concurrently": "^8.0.1"
+  }
+}
