@@ -14,6 +14,8 @@ import {
   VStack,
 } from '@chakra-ui/react';
 
+import { config } from '../../../config';
+
 interface IData {
   title: string;
   city: string;
@@ -46,7 +48,7 @@ export const ExcursionForm = (): JSX.Element => {
       formData.append(key, value);
     });
 
-    await axios.post('http://localhost:4000/excursions', formData, {
+    await axios.post(`${config.serverUrl}/excursions`, formData, {
       headers: { 'Content-Type': 'multipart/form-data' },
     });
 

@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 
 import type { IExcursion } from '../../types';
 
+import { config } from '../../../config';
+
 export const Excursion = ({
   id,
   imageUrl,
@@ -24,7 +26,7 @@ export const Excursion = ({
       <Image
         maxW="250px"
         maxH="350px"
-        src={`http://localhost:4000/${imageUrl}`}
+        src={`${config.serverUrl}/${imageUrl}`}
         alt={title}
       />
       <Text>Title: {title}</Text>

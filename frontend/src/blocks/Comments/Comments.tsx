@@ -15,6 +15,8 @@ import {
   Image,
 } from '@chakra-ui/react';
 
+import { config } from '../../../config';
+
 interface IForm {
   grade: number;
   body: string;
@@ -55,7 +57,7 @@ export const Comments = (): JSX.Element => {
       formData.append('excursionId', id);
     }
 
-    await axios.post('http://localhost:4000/comments', formData, {
+    await axios.post(`${config.serverUrl}/comments`, formData, {
       headers: { 'Content-Type': 'multipart/form-data' },
     });
 
@@ -64,7 +66,7 @@ export const Comments = (): JSX.Element => {
 
   useEffect((): void => {
     axios
-      .get(`http://localhost:4000/excursions/${id}/comments`)
+      .get(`${config.serverUrl}/excursions/${id}/comments`)
       .then((response) => {
         setIsLoading(false);
         setComments(response.data);
@@ -80,7 +82,7 @@ export const Comments = (): JSX.Element => {
       p="10px"
       borderRadius="5px"
     >
-      <Image src={`http://localhost:4000/${comment.imageUrl}`} mb="10px" />
+      <Image src={`${config.serverUrl}/${comment.imageUrl}`} mb="10px" />
       <Text as="p">Grade: {comment.grade}</Text>
       <Text as="p">Body: {comment.body}</Text>
     </Box>

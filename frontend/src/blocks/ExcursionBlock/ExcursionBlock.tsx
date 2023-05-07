@@ -3,6 +3,8 @@ import { Container, Text, Image, HStack, VStack, Box } from '@chakra-ui/react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
 
+import { config } from '../../../config';
+
 import type { IExcursion } from '../../types';
 
 export const ExcursionBlock = (): JSX.Element => {
@@ -11,7 +13,7 @@ export const ExcursionBlock = (): JSX.Element => {
 
   useEffect((): void => {
     axios
-      .get(`http://localhost:4000/excursions/${id}`)
+      .get(`${config.serverUrl}/excursions/${id}`)
       .then((response) => setExcursion(response.data))
       .catch((error) => console.error(error));
   }, [id]);

@@ -15,6 +15,8 @@ import axios from 'axios';
 
 import { Excursion } from '../../components';
 
+import { config } from '../../../config';
+
 import type { IExcursion } from '../../types';
 
 export const Excursions = (): JSX.Element => {
@@ -27,7 +29,7 @@ export const Excursions = (): JSX.Element => {
 
   useEffect((): void => {
     axios
-      .get<IExcursion[]>('http://localhost:4000/excursions/')
+      .get<IExcursion[]>(`${config.serverUrl}/excursions/`)
       .then((response) => response.data)
       .then((data) => {
         allExcursions.current = data;
