@@ -18,6 +18,6 @@ Comments.belongsTo(Excursions, {
   foreignKey: 'excursionId',
 });
 
-await db.sync();
+await db.sync({ force: true });
 
 export { Excursions, Comments };
